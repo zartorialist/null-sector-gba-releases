@@ -104,10 +104,9 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
 .foot{font:500 15px/1.6 var(--body);color:#a493d4;text-align:center;max-width:620px;margin:0}
 .foot b{color:var(--lav);font-weight:600}
 
-@media (max-width:860px){ .shots{grid-template-columns:repeat(2,minmax(0,254px))} .shots figure:last-child{display:none} }
+@media (max-width:860px){ .shots{grid-template-columns:repeat(3,minmax(0,1fr))} }
 @media (max-width:560px){
-  .shots{grid-template-columns:1fr 1fr}
-  .shots figure:last-child{display:none}
+  .shots{grid-template-columns:minmax(0,320px);justify-content:center}
   .arrow{display:none}
   .sun{width:78vw;right:-14vw;top:36%}
   .ico{width:44px;height:44px}.ico svg{width:30px;height:30px}
