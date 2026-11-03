@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Warp gates and boost pads in Free Play and Gauntlet arenas: a pair of cyan gates (north-west and south-east; ships keep their speed and shots go through too) and four chevron pads on the axes outside the hall that fling you outward past top speed
+Duel arenas rebuilt round a gimmick each: The Well (black hole, L cover), The Split (a dividing wall, warp gates between far corners), The Circuit (racetrack round a long block, pads speeding you round), The Slingshot (black hole with pads round it), The Corridors (gates between opposite corners), The Pinball (pads between four blocks). Spawns keep clear of black holes; map flood starts from open floor
