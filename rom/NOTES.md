@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Low energy no longer stutters: the red screen edge pulses by palette instead of re-uploading the whole HUD every frame, and the bar under your ship is a sprite that rides with it (it jittered a frame behind)
+Black hole galaxy drawn as one pre-drawn sprite turned and tipped by an affine matrix (was ~40 dot sprites): scenes beside a black hole run noticeably smoother
