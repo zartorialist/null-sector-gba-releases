@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Black hole in the central hall of Free Play and Gauntlet arenas: pulls ships and shots toward it (harder the closer), bends shots round it, burns ships in its core; bots steer clear; a dark core in a violet glow with sparks swirling in. Not in trials, duels or the boss arena
+Warp gates and boost pads in Free Play and Gauntlet arenas: a pair of cyan gates (north-west and south-east; ships keep their speed and shots go through too) and four chevron pads on the axes outside the hall that fling you outward past top speed
