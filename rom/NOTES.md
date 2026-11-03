@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Impact and sound: hits throw sparks and blink the ship white twice; a destroyed ship flings tumbling hull shards; every sound effect is two layers; your shots landing tick, your kills play a rising three-note sting; at match point, the last 30 s, near the points goal and on boss waves the music lifts with a heartbeat under it
+Hyperspace warp into every match: stars streak out as the screen brightens to white, the arena is built while it's white, then it fades in (hides the 0.4 s map build; trial quick restarts stay instant, and trials no longer show their card before building)
