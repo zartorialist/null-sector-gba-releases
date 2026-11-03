@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-The duel ladder becomes the story: five sectors of five, each ending with a champion (Kane, Rourke, Vesper, Voss, Vex-07); the supplied pilot portraits speak before your first try and when you first beat them, Finn opens each sector, and beating Vex-07 ends the story
+No ships on screen during dialogue scenes; the camera's velocity lead is eased so a black hole's slingshot no longer swings the view back and forth; cheaper galaxy drawing and drone checks (fewer slow frames near a black hole)
