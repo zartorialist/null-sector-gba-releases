@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Demo flight: the blinking prompt redraws only its strip (no more glitches); the title menu's completion % is big
+Synthwave screens cut straight in (no slide or fade, so the backdrop no longer shows through mid-fade: the glitch after Finn's style talk)
