@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-One black hole per arena at most; a clearer warp beacon (pulsing, on your radar); item pickups get their own chime and coloured name
+No half-drawn flash between menus or into and out of dialogue: a short black cut while the new screen loads; portrait colours load with their pixels
