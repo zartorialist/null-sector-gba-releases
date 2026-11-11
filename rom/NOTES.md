@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-No crown on the top scorer's name tag (its bounty stays)
+Gauntlet swarms: bigger waves (3, 5, 6, up to 8) of lighter, quicker hunters; half warp in at once, the rest in pairs
