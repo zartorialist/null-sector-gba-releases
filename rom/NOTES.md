@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Boss gun pods converge: one aims at you, one where you're heading; OBJ tile map checked at build time
+Boss signature attacks: Reaver fan, Leviathan spiral, Wraith seekers, Hellforge fire rings
