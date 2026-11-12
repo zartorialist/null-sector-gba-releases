@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Speed: hit flashes at most one every 3 frames with fewer sparks; fireballs drawn without divides
+Speed: mines are cheap to run and bots lay fewer; seekers and shots cost less per frame
