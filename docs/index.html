@@ -65,6 +65,7 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
 .screen{width:100%;max-width:720px;padding:8px;background:var(--panel);border:2px solid var(--cyan);
   box-shadow:0 0 0 2px #0a0420,0 0 22px rgba(79,224,255,.35),inset 0 0 0 2px #0a0420}
 .screen img{display:block;width:100%;height:auto;aspect-ratio:3/2;image-rendering:pixelated;image-rendering:crisp-edges}
+.screen video{display:block;width:100%;height:auto;aspect-ratio:3/2;background:#000}
 
 /* the one button: a title-menu row under the cursor */
 .row{position:relative;width:100%;max-width:560px;display:flex;justify-content:center}
@@ -126,7 +127,7 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
   <h1 class="sr">Null Sector for Game Boy Advance</h1>
   <div class="eyebrow">Game Boy Advance · Zero-G Arena Combat</div>
 
-  <div class="screen"><img src="img/splash.gif?v=2" width="240" height="160" alt="Null Sector title screen: pixel-art ships flying past a ringed planet, stars twinkling"></div>
+  <div class="screen"><video src="img/trailer.mp4?v=9" poster="img/splash.gif?v=2" width="1440" height="960" autoplay muted loop playsinline controls preload="auto" aria-label="Null Sector trailer: Captain Finn, the Gauntlet, the Reaver boss and free-for-all battles"></video></div>
 
   <div class="row">
     <svg class="arrow" viewBox="0 0 8 11" aria-hidden="true" shape-rendering="crispEdges"><path fill="#ffd23f" d="M0 0h2v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v1h-1v1h-1v1h-1v1H0z"/><path fill="#a8741a" d="M0 10h2v1H0z"/></svg>
