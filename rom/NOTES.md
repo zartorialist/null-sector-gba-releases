@@ -1,3 +1,3 @@
 Download **Null-Sector.gba** and open it in any GBA emulator (mGBA, SkyEmu, Delta, RetroArch) or on a flash cart.
 
-Sector hazards: drifting asteroids in sector 2, laser gates in sector 4, both in sector 5
+Gauntlet bosses fight in a hall opened in the maze (no warp); polish pass (help pages, hunter tips, Time Trials card, HIGH ROLLER at 500); faster and leaner under the hood
