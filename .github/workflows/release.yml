@@ -1,10 +1,10 @@
-# A new ROM pushed to rom/ becomes a release: the file people download is Null-Sector.gba
-# (its link reads "Null Sector.gba"), and rom/NOTES.md is the release text.
+# A new ROM pushed to rom/ becomes a release: the file people download is Triiv.gba
+# (its link reads "Triiv.gba"), and rom/NOTES.md is the release text.
 name: Release ROM
 on:
   push:
     branches: [main]
-    paths: ['rom/Null-Sector.gba']
+    paths: ['rom/Triiv.gba']
 permissions:
   contents: write
 jobs:
@@ -17,5 +17,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG="build-$(date -u +%Y%m%d-%H%M)"
-          gh release create "$TAG" "rom/Null-Sector.gba#Null Sector.gba" \
-            --title "Null Sector ($TAG)" --notes-file rom/NOTES.md --latest
+          gh release create "$TAG" "rom/Triiv.gba#Triiv.gba" \
+            --title "Triiv ($TAG)" --notes-file rom/NOTES.md --latest
