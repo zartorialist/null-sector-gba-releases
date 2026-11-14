@@ -84,7 +84,10 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
 .screen video{display:block;width:100%;height:auto;aspect-ratio:3/2;background:#000}
 
 /* the one button: a title-menu row under the cursor */
-.row{position:relative;width:100%;max-width:560px;display:flex;justify-content:center}
+.row{position:relative;width:100%;max-width:820px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dl.play{border-color:var(--cyan);background:linear-gradient(180deg,#14284a,#101a3c);box-shadow:0 0 0 2px #0a0420,0 0 18px rgba(79,224,255,.45),inset 0 0 14px rgba(79,224,255,.2)}
+.dl.play .ico{box-shadow:0 0 0 2px var(--cyan)}
+.dl.play:active{background:#1a3460}
 .arrow{position:absolute;left:-26px;top:50%;width:16px;height:22px;margin-top:-11px;animation:bob .6s steps(2) infinite}
 @keyframes bob{50%{transform:translateX(5px)}}
 .dl{display:flex;align-items:center;gap:16px;width:100%;padding:14px 18px 14px 14px;text-decoration:none;color:var(--white);
@@ -99,9 +102,9 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
 .ico svg{width:36px;height:36px;shape-rendering:crispEdges}
 @keyframes drop{50%{transform:translateY(3px)}}
 .txt{display:flex;flex-direction:column;gap:6px;min-width:0}
-.txt b{font:400 clamp(22px,5vw,30px)/1 var(--px);letter-spacing:.06em;text-transform:uppercase;color:#fff;
+.txt b{white-space:nowrap;font:400 clamp(16px,2.2vw,20px)/1 var(--px);letter-spacing:.06em;text-transform:uppercase;color:#fff;
   text-shadow:2px 2px 0 #7a1466;-webkit-font-smoothing:none;font-smooth:never}
-.txt small{font:500 15px/1.2 var(--body);color:var(--lav);letter-spacing:.02em}
+.txt small{font:500 14px/1.25 var(--body);color:var(--lav);letter-spacing:.02em}
 
 
 .info{width:100%;max-width:800px;margin-top:8px;padding:20px clamp(12px,2vw,16px) 18px;display:flex;flex-direction:column;align-items:center;gap:18px;
@@ -131,6 +134,7 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
 .pocket p{margin:0;font:400 13px/1.2 var(--px);color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;text-align:center;
   padding:6px 12px;background:rgba(10,4,32,.88);border:1px solid #2f8fb0;box-shadow:0 0 0 2px #0a0420}
 @media (max-width:860px){ .shots{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:700px){ .row{grid-template-columns:1fr;max-width:560px} }
 @media (max-width:560px){
   .pocket p .nw{display:block} .pocket p .dot{display:none}
   .eyebrow{font-size:11px;letter-spacing:.08em;padding:7px 12px}
@@ -163,6 +167,12 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
         <svg viewBox="0 0 12 12"><path fill="#ff4fb0" d="M5 1h2v5h2v1H8v1H7v1H5V8H4V7H3V6h2z"/><path fill="#24114a" d="M2 10h8v1H2z"/></svg>
       </span>
       <span class="txt"><b>Download free ROM</b><small id="build">Triiv.gba · Updated Nov 13 '26</small></span>
+    </a>
+    <a class="dl play" href="play/">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 12 12"><path fill="#4fe0ff" d="M3 1h2v1h1v1h1v1h1v1h1v2H8v1H7v1H6v1H5v1H3z"/></svg>
+      </span>
+      <span class="txt"><b>Play in browser</b><small>No download · best with a controller</small></span>
     </a>
   </div>
   <section class="pocket hero">
