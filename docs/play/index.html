@@ -67,7 +67,7 @@ main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:14px max(
 .badge.on{color:var(--gold);border-color:#b08a2f}
 .badge small{display:block;font:500 13px/1.3 var(--body);letter-spacing:.02em;text-transform:none;color:var(--lav)}
 
-/* the Pocket: the image, the game canvas on its screen, touch areas over its buttons (percent of the image) */
+/* the Pocket: the image and the game canvas on its screen (percent of the image); its buttons are only a picture: play with a controller or keys */
 .dev{position:relative;width:var(--devw,min(470px,calc(100vw - 32px)));flex:none}
 .dev>canvas.body{display:block;width:100%;height:auto;aspect-ratio:946/1592;image-rendering:auto;filter:drop-shadow(0 14px 26px rgba(0,0,0,.6)) drop-shadow(0 0 30px rgba(79,224,255,.12));user-select:none;-webkit-user-select:none;pointer-events:none}
 .scr{position:absolute;left:11.945%;top:11.872%;width:76.11%;height:30.151%;background:#000}
@@ -83,18 +83,22 @@ main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:14px max(
   background:rgba(10,4,32,.78);color:var(--cyan);cursor:pointer;z-index:2}
 .snd svg{width:62%;height:62%}.snd .w{display:none}.snd[aria-pressed="true"] .w{display:inline}.snd[aria-pressed="true"] .x{display:none}
 .snd:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.key{position:absolute;border-radius:50%;touch-action:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.key.on{background:rgba(79,224,255,.32);box-shadow:0 0 14px rgba(79,224,255,.6)}
-.key i{position:absolute;font:400 10px/1 var(--px);font-style:normal;color:var(--cyan);letter-spacing:.06em;white-space:nowrap;pointer-events:none;text-shadow:0 0 4px #000}
-.dpad{left:9%;top:60%;width:24.5%;aspect-ratio:1;border-radius:18%}
-.kA{left:82.2%;top:64.3%;width:9.6%;aspect-ratio:1}.kA i{left:115%;top:30%}
-.kB{left:71.7%;top:70.2%;width:9.6%;aspect-ratio:1}.kB i{left:30%;top:112%}
-.kR{left:71.7%;top:58.3%;width:9.6%;aspect-ratio:1}.kR i{left:30%;top:-55%}
-.kL{left:61.6%;top:64.3%;width:9.6%;aspect-ratio:1}.kL i{right:112%;top:30%}
-.kSel{left:38.3%;top:88.1%;width:5.8%;aspect-ratio:1}.kSel i{left:-30%;top:-90%}
-.kSt{left:56.5%;top:88.1%;width:5.8%;aspect-ratio:1}.kSt i{left:-35%;top:-90%}
-@media (hover:hover) and (pointer:fine){ .key i{opacity:.75} }
 
+/* the download button, as on the download page */
+.row{position:relative;width:100%;max-width:560px;display:flex;justify-content:center}
+.dl{display:flex;align-items:center;gap:16px;width:100%;padding:14px 18px 14px 14px;text-decoration:none;color:var(--white);
+  background:linear-gradient(180deg,#3a1450,#2a0f46);border:3px solid var(--pink);
+  box-shadow:0 0 0 2px #0a0420,0 0 18px rgba(255,79,176,.55),inset 0 0 14px rgba(255,79,176,.25);transition:transform .08s}
+.dl:hover{transform:translateY(-2px)}
+.dl:active{transform:translateY(1px);background:#4a1a62}
+.dl:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.ico{flex:none;width:52px;height:52px;display:grid;place-items:center;background:#fff4fb;border:2px solid #0a0420;box-shadow:0 0 0 2px var(--pink)}
+.ico svg{width:36px;height:36px;shape-rendering:crispEdges}
+.txt{display:flex;flex-direction:column;gap:6px;min-width:0}
+.txt b{font:400 clamp(18px,4.2vw,26px)/1 var(--px);letter-spacing:.05em;text-transform:uppercase;color:#fff;text-shadow:2px 2px 0 #7a1466}
+.txt small{font:500 15px/1.2 var(--body);color:var(--lav);letter-spacing:.02em}
+@media (max-width:560px){ .ico{width:44px;height:44px}.ico svg{width:30px;height:30px} .dl{gap:12px;padding:12px 14px 12px 12px}
+  .txt b{white-space:nowrap;letter-spacing:.02em;font-size:min(24px,calc((100vw - 132px) / 17))} }
 /* panels */
 .info{width:100%;max-width:800px;padding:16px clamp(12px,2vw,18px);display:flex;flex-direction:column;gap:14px;
   background:rgba(23,10,48,.94);border:2px solid #2f8fb0;box-shadow:0 0 0 2px #0a0420,0 0 16px rgba(79,224,255,.18)}
@@ -104,10 +108,26 @@ main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:14px max(
 .tbtn{font:400 12px/1 var(--px);letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--panel2);border:2px solid #3b2a6a;padding:9px 12px;cursor:pointer;box-shadow:0 0 0 2px #0a0420}
 .tbtn:hover{border-color:var(--pink)}
 .tbtn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:8px 28px;font:500 14px/1.4 var(--body);color:var(--lav)}
-.legend div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;min-width:0;border-bottom:1px solid #2a1a52;padding-bottom:6px}
-.legend span{font:400 12px/1.4 var(--px);letter-spacing:.08em;text-transform:uppercase;color:var(--white);white-space:nowrap}
-.legend b{text-align:right;font-weight:500}
+.ctl{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);font:500 14px/1.35 var(--body);color:var(--lav)}
+.ctl>div{display:contents}
+.ctl>div>*{padding:7px 8px 7px 0;border-bottom:1px solid #2a1a52;display:flex;align-items:center;flex-wrap:wrap;gap:4px 5px;min-width:0}
+.ctl .hd>*{font:400 11px/1.2 var(--px);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);border-bottom-color:#2f8fb0}
+.ctl .act{color:var(--white);font-weight:600;gap:8px}
+.ctl .or{color:var(--dim);font-size:12px}
+/* the GBA's buttons, drawn as buttons */
+.gb{display:inline-grid;place-items:center;flex:none;font:400 10px/1 var(--px);color:#fff;vertical-align:middle}
+.gb.ab{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a7ad8,#4b3a9a 70%);box-shadow:0 2px 0 #1c1240,inset 0 0 0 1px #a99bf0}
+.gb.sh{height:18px;padding:0 9px;border-radius:9px 9px 3px 3px;background:linear-gradient(180deg,#5a5a6e,#34344a);box-shadow:0 2px 0 #14141f,inset 0 0 0 1px #8a8aa6}
+.gb.pl{height:14px;padding:0 7px;border-radius:7px;background:#34344a;box-shadow:0 2px 0 #14141f,inset 0 0 0 1px #8a8aa6;font-size:8px;letter-spacing:.06em}
+.gb.dp{width:24px;height:24px}
+.gb.dp svg{width:24px;height:24px;shape-rendering:crispEdges}
+.plus{color:var(--white);font:400 12px var(--px)}
+/* a controller's buttons */
+.pb{display:inline-grid;place-items:center;flex:none;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#120a2a;box-shadow:inset 0 0 0 1px #5b4a96;font:600 11px/1 var(--body);color:var(--white)}
+.pb.r{width:20px;padding:0;border-radius:50%}
+.pb.x{color:#7ab4ff}.pb.o{color:#ff6a7a}.pb.q{color:#f08fd0}.pb.t{color:#4fe0b0}
+.pb.xa{color:#5dd85d}.pb.xb{color:#ff5a5a}.pb.xx{color:#4fa8ff}.pb.xy{color:#ffd23f}
+@media (max-width:640px){ .ctl{grid-template-columns:1fr 1fr} .ctl .hd .kb,.ctl .kb{display:none} }
 kbd{font:400 11px/1 var(--px);color:var(--white);border:1px solid #4a3a80;padding:2px 5px;background:var(--panel2);box-shadow:0 1px 0 #0a0420}
 .note{margin:0;font:500 14px/1.6 var(--body);color:#a493d4}
 .note strong{color:var(--white);font-weight:600}
@@ -138,15 +158,13 @@ kbd{font:400 11px/1 var(--px);color:var(--white);border:1px solid #4a3a80;paddin
       <button class="boot" id="boot" type="button"><b>Power on</b><small>Starts the cartridge with sound</small></button>
     </div>
     <button class="snd" id="mute" type="button" aria-label="Turn the sound off" aria-pressed="true"><svg viewBox="0 0 12 12" aria-hidden="true" shape-rendering="crispEdges"><path fill="currentColor" d="M1 4h2l3-3h1v10H6L3 8H1z"/><path class="w" fill="currentColor" d="M8 4h1v4H8zM10 2h1v8h-1z"/><path class="x" fill="currentColor" d="M8 4h1v1H8zM10 4h1v1h-1zM9 5h1v2H9zM8 7h1v1H8zM10 7h1v1h-1z"/></svg></button>
-    <div id="pad">
-      <div class="key dpad" id="dpad" aria-label="D-pad"></div>
-      <div class="key kA" data-k="0" aria-label="A"><i>A</i></div>
-      <div class="key kB" data-k="1" aria-label="B"><i>B</i></div>
-      <div class="key kR" data-k="8" aria-label="R"><i>R</i></div>
-      <div class="key kL" data-k="9" aria-label="L"><i>L</i></div>
-      <div class="key kSel" data-k="2" aria-label="Select"><i>SEL</i></div>
-      <div class="key kSt" data-k="3" aria-label="Start"><i>START</i></div>
-    </div>
+  </div>
+
+  <div class="row">
+    <a class="dl" href="https://github.com/zartorialist/triiv/releases/latest/download/Triiv.gba" rel="noopener">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 12 12"><path fill="#ff4fb0" d="M5 1h2v5h2v1H8v1H7v1H5V8H4V7H3V6h2z"/><path fill="#24114a" d="M2 10h8v1H2z"/></svg></span>
+      <span class="txt"><b>Download free GBA ROM</b><small>Triiv.gba · for a GBA, the Pocket or any emulator</small></span>
+    </a>
   </div>
 
   <section class="info">
@@ -158,18 +176,19 @@ kbd{font:400 11px/1 var(--px);color:var(--white);border:1px solid #4a3a80;paddin
 
   <section class="info">
     <h2>Controls</h2>
-    <div class="legend">
-      <div><span>D-pad</span><b>Controller D-pad or left stick · <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></b></div>
-      <div><span>A · gun</span><b>Cross / A · <kbd>Z</kbd> or <kbd>Space</kbd></b></div>
-      <div><span>B · bomb</span><b>Circle or Square / B or X · <kbd>X</kbd></b></div>
-      <div><span>L</span><b>L1 or L2 · <kbd>A</kbd> or <kbd>C</kbd></b></div>
-      <div><span>R</span><b>R1 or R2 · <kbd>Shift</kbd> or <kbd>S</kbd></b></div>
-      <div><span>Select · item</span><b>Triangle or Create / Y or View · <kbd>Backspace</kbd></b></div>
-      <div><span>Start · pause</span><b>Options / Menu · <kbd>Enter</kbd></b></div>
-      <div><span>Touch</span><b>The Pocket's buttons; the top and left face buttons are R and L</b></div>
+    <div class="ctl" role="table" aria-label="Controls">
+      <div class="hd" role="row"><span role="columnheader">GBA button</span><span role="columnheader">Controller</span><span class="kb" role="columnheader">Keyboard</span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb dp" title="D-pad"><svg viewBox="0 0 12 12" aria-label="D-pad"><path fill="#34344a" d="M4 0h4v4h4v4H8v4H4V8H0V4h4z"/><path fill="#8a8aa6" d="M5 1h2v3H5zM5 8h2v3H5zM1 5h3v2H1zM8 5h3v2H8z"/></svg></span> Point / turn</span><span role="cell"><span class="gb dp" title="D-pad"><svg viewBox="0 0 12 12" aria-label="D-pad"><path fill="#34344a" d="M4 0h4v4h4v4H8v4H4V8H0V4h4z"/><path fill="#8a8aa6" d="M5 1h2v3H5zM5 8h2v3H5zM1 5h3v2H1zM8 5h3v2H8z"/></svg></span> <span class="or">or</span> left stick</span><span class="kb" role="cell"><kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb ab" title="A">A</span> Fire</span><span role="cell"><span class="pb r x">✕</span> / <span class="pb r xa">A</span></span><span class="kb" role="cell"><kbd>Z</kbd> <span class="or">or</span> <kbd>Space</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb ab" title="B">B</span> Bomb</span><span role="cell"><span class="pb r o">○</span> <span class="pb r q">□</span> / <span class="pb r xb">B</span> <span class="pb r xx">X</span></span><span class="kb" role="cell"><kbd>X</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb sh" title="R">R</span> Thrust</span><span role="cell"><span class="pb">R1</span> <span class="or">or</span> <span class="pb">R2</span></span><span class="kb" role="cell"><kbd>Shift</kbd> <span class="or">or</span> <kbd>S</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb sh" title="L">L</span> Brake</span><span role="cell"><span class="pb">L1</span> <span class="or">or</span> <span class="pb">L2</span></span><span class="kb" role="cell"><kbd>A</kbd> <span class="or">or</span> <kbd>C</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb sh" title="L">L</span><span class="plus">+</span><span class="gb sh" title="R">R</span> Afterburner</span><span role="cell"><span class="pb">L1</span><span class="plus">+</span><span class="pb">R1</span></span><span class="kb" role="cell"><kbd>A</kbd><span class="plus">+</span><kbd>Shift</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb pl" title="Select">SELECT</span> Use item</span><span role="cell"><span class="pb r t">△</span> <span class="pb">Create</span> / <span class="pb r xy">Y</span> <span class="pb">View</span></span><span class="kb" role="cell"><kbd>Backspace</kbd></span></div>
+      <div role="row"><span class="act" role="cell"><span class="gb pl" title="Start">START</span> Pause</span><span role="cell"><span class="pb">Options</span> / <span class="pb">Menu</span></span><span class="kb" role="cell"><kbd>Enter</kbd></span></div>
     </div>
-    <p class="note"><strong>Best with a game controller:</strong> any pad your browser sees works (Xbox, PlayStation, Switch Pro, 8BitDo), and the game draws its button prompts to match. R thrusts, L brakes, L + R is the afterburner, A fires, B bombs, Select uses your item. There is no friction, so you keep drifting. New pilots start in flight school with Captain Finn. Your progress saves in this browser.</p>
-    <p class="note">Emulation by gbajs (BSD licence, Jeffrey Pfau) with its open-source BIOS. <a class="back" href="https://zartorialist.github.io/triiv/">Download the ROM</a></p>
+    <p class="note"><strong>Best with a game controller:</strong> any pad your browser sees works (Xbox, PlayStation, Switch Pro, 8BitDo), and the game draws its button prompts to match. There is no friction, so you keep drifting: thrust, then brake or turn before you hit a wall. New pilots start in flight school with Captain Finn. Your progress saves in this browser.</p>
+    <p class="note">Emulation by gbajs (BSD licence, Jeffrey Pfau) with its open-source BIOS.</p>
   </section>
 </main>
 <script>/* gbajs - Copyright (c) 2012, Jeffrey Pfau
@@ -10845,36 +10864,16 @@ function audioPump(){   /* after emulated frames: post the new samples to the wo
   wRead=sp; wNode.port.postMessage([l,r],[l.buffer,r.buffer]); wPosted+=n;
 }
 
-/* input: keyboard + touch + gamepad are merged each frame */
+/* input: keyboard + gamepad are merged each frame */
 const BIT={A:0,B:1,SELECT:2,START:3,RIGHT:4,LEFT:5,UP:6,DOWN:7,R:8,L:9};
 const HOSTSEL=0x02000060; let host=0;   /* how the game draws SELECT: 0 SEL, 1 Y (Xbox-style pad), 2 triangle (PlayStation), 3 Backspace */
 const KEYMAP={ArrowLeft:BIT.LEFT,ArrowRight:BIT.RIGHT,ArrowUp:BIT.UP,ArrowDown:BIT.DOWN,KeyZ:BIT.A,Space:BIT.A,KeyX:BIT.B,
   ShiftLeft:BIT.R,ShiftRight:BIT.R,KeyS:BIT.R,KeyA:BIT.L,KeyC:BIT.L,Enter:BIT.START,Backspace:BIT.SELECT};
-let kb=0, touch=0, dpadBits=0, tapped=0, padInfo='';   /* tapped: presses held over to the next emulated frame so quick taps always count */
+let kb=0, tapped=0, padInfo='';   /* tapped: presses held over to the next emulated frame so quick taps always count */
 addEventListener('keydown',e=>{const b=KEYMAP[e.code]; if(b===undefined||!running) return; host=3; kb|=1<<b; tapped|=1<<b; e.preventDefault()});
 addEventListener('keyup',e=>{const b=KEYMAP[e.code]; if(b===undefined) return; kb&=~(1<<b); if(running) e.preventDefault()});
-addEventListener('blur',()=>{kb=0;touch=0;dpadBits=0});
+addEventListener('blur',()=>{kb=0});
 
-document.querySelectorAll('#pad .key[data-k]').forEach(el=>{
-  const bit=+el.dataset.k;
-  const down=e=>{e.preventDefault(); try{el.setPointerCapture(e.pointerId)}catch(_){} touch|=1<<bit; tapped|=1<<bit; host=0; el.classList.add('on'); if(!running) power()};
-  const up=()=>{touch&=~(1<<bit); el.classList.remove('on')};
-  el.addEventListener('pointerdown',down); el.addEventListener('pointerup',up); el.addEventListener('pointercancel',up); el.addEventListener('lostpointercapture',up);
-});
-const dpad=document.getElementById('dpad');
-function dpadAt(e){
-  const r=dpad.getBoundingClientRect(), x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2;
-  dpadBits=0; if(Math.hypot(x,y)<r.width*.1) return;
-  const a=Math.atan2(y,x), s=Math.PI/8;
-  if(Math.abs(a)<3*s) dpadBits|=1<<BIT.RIGHT;
-  if(Math.abs(a)>5*s) dpadBits|=1<<BIT.LEFT;
-  if(a>s&&a<7*s) dpadBits|=1<<BIT.DOWN;
-  if(a<-s&&a>-7*s) dpadBits|=1<<BIT.UP;
-}
-dpad.addEventListener('pointerdown',e=>{e.preventDefault(); try{dpad.setPointerCapture(e.pointerId)}catch(_){} dpad.classList.add('on'); dpadAt(e); if(!running) power()});
-dpad.addEventListener('pointermove',e=>{ if(dpad.classList.contains('on')) dpadAt(e) });
-const dEnd=()=>{dpadBits=0; dpad.classList.remove('on')};
-dpad.addEventListener('pointerup',dEnd); dpad.addEventListener('pointercancel',dEnd); dpad.addEventListener('lostpointercapture',dEnd);
 
 function padBits(){
   let b=0; const pads=navigator.getGamepads?navigator.getGamepads():[]; padInfo='';
@@ -10902,7 +10901,7 @@ function loop(t){
   requestAnimationFrame(loop);
   if(!last) last=t; acc+=Math.min(100,t-last); last=t;
   let n=0;
-  while(acc>=STEP&&n<4){ gba.keypad.currentDown=0x3FF&~(kb|touch|tapped|dpadBits|padBits()); tapped=0; if(HOSTSEL) gba.mmu.store8(HOSTSEL,host); gba.advanceFrame(); acc-=STEP; n++; fpsN++; }
+  while(acc>=STEP&&n<4){ gba.keypad.currentDown=0x3FF&~(kb|tapped|padBits()); tapped=0; if(HOSTSEL) gba.mmu.store8(HOSTSEL,host); gba.advanceFrame(); acc-=STEP; n++; fpsN++; }
   audioPump();
   if(n===4) acc=0;
   if(t-fpsT>1000){ statusEl.textContent=`Running · ${fpsN} fps`+(padInfo?` · ${padInfo}`:''); fpsN=0; fpsT=t; }
@@ -10933,9 +10932,12 @@ function fit(){
 fit(); addEventListener('resize',fit);
 /* the controller badge: says when a pad is connected */
 const badge=document.getElementById('badge'), badgeTxt=document.getElementById('badgeTxt');
+const touchOnly=matchMedia('(hover:none) and (pointer:coarse)').matches;   /* a phone or tablet: no keys, so a controller is needed */
+const NOPAD=touchOnly?'Connect a game controller to play<small>Pair one over Bluetooth, then press any button</small>':'Best with a game controller<small>Plug one in or pair it, then press any button</small>';
 function padBadge(){ const ps=navigator.getGamepads?[...navigator.getGamepads()].filter(Boolean):[];
   if(ps.length){ badge.classList.add('on'); badgeTxt.innerHTML='Controller connected<small></small>'; badgeTxt.querySelector('small').textContent=ps[0].id.replace(/\s*\(.*$/,'').slice(0,40); }
-  else { badge.classList.remove('on'); badgeTxt.innerHTML='Best with a game controller<small>Plug one in or pair it, then press any button</small>'; } }
+  else { badge.classList.remove('on'); badgeTxt.innerHTML=NOPAD; } }
+padBadge();
 addEventListener('gamepadconnected',padBadge); addEventListener('gamepaddisconnected',padBadge);
 /* show a still of the title screen before power-on */
 romReady.then(()=>{ if(romBuf&&!gba&&create()){ for(let i=0;i<260;i++) gba.advanceFrame();   /* past the publisher card, onto the splash */ } });
