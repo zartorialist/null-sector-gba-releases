@@ -160,7 +160,7 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
       <span class="ico" aria-hidden="true">
         <svg viewBox="0 0 12 12"><path fill="#ff4fb0" d="M5 1h2v5h2v1H8v1H7v1H5V8H4V7H3V6h2z"/><path fill="#24114a" d="M2 10h8v1H2z"/></svg>
       </span>
-      <span class="txt"><b>Download ROM</b><small id="build">Triiv.gba · Free · 13 MB · updated Nov 13</small></span>
+      <span class="txt"><b>Download free ROM</b><small id="build">Triiv.gba · Updated Nov 13 '26</small></span>
     </a>
   </div>
   <section class="pocket hero">
@@ -177,8 +177,8 @@ main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:clamp(18p
 (async()=>{try{
   const r=await fetch('https://api.github.com/repos/zartorialist/triiv/releases/latest'); if(!r.ok) return;
   const j=await r.json(), a=(j.assets||[]).find(x=>/\.gba$/i.test(x.name)); if(!a) return;
-  const d=new Date(j.published_at||a.updated_at).toLocaleDateString('en-US',{month:'short',day:'numeric'});
-  document.getElementById('build').textContent=a.name+' · Free · '+Math.round(a.size/1e6)+' MB · updated '+d;
+  const t=new Date(j.published_at||a.updated_at), d=t.toLocaleDateString('en-US',{month:'short',day:'numeric'})+" '"+String(t.getFullYear()).slice(2);
+  document.getElementById('build').textContent=a.name+' · Updated '+d;
 }catch(e){}})();
 </script>
 <script>
