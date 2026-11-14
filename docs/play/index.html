@@ -10916,7 +10916,8 @@ function power(){
 }
 bootEl.addEventListener('click',power);
 muteBtn.addEventListener('click',()=>{ muted=!muted; setMuteLabel(); try{localStorage.setItem('nsgba_muted',muted?'1':'0')}catch(e){} if(gba&&gba.audio) gba.audio.masterEnable=!muted; });
-document.getElementById('reset').addEventListener('click',()=>{ if(!gba) return; running=false; wNode=null; try{gba.storeSavedata()}catch(e){} gba=null; if(create()){ running=true; last=0; requestAnimationFrame(loop) } });
+document.getElementById('reset').addEventListener('click',()=>{   /* a fresh power-on: also the first one, if the cartridge hadn't been started */
+  if(!gba){ power(); return; } running=false; wNode=null; try{gba.storeSavedata()}catch(e){} gba=null; if(create()){ try{ gba.audio.context&&gba.audio.context.resume() }catch(e){} bootEl.hidden=true; running=true; last=0; requestAnimationFrame(loop) } });
 document.addEventListener('visibilitychange',()=>{ if(document.hidden&&running){ try{gba.storeSavedata()}catch(e){} } });
 
 /* size: on a computer, the largest whole-pixel scale whose screen fits the window (the Pocket below it may run off
